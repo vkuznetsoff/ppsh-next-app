@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <Page back={false}>
-      КЛУБ ПЕРЕПРОШИТЫХ
+      КЛУБ ПЕРЕПРОШИТЫХ 2.0
       <List>
         <Section
           header="Application Launch Data"
