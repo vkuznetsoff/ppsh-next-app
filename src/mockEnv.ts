@@ -16,7 +16,7 @@ export async function mockEnv(): Promise<void> {
         header_bg_color: '#17212b',
         hint_color: '#708499',
         link_color: '#6ab3f3',
-        secondary_bg_color: '#232e3c',
+        secondary_bg_color: '#ffffff',
         section_bg_color: '#17212b',
         section_header_text_color: '#6ab3f3',
         subtitle_text_color: '#708499',
