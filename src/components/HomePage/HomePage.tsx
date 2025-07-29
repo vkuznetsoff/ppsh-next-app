@@ -18,14 +18,7 @@ const HomePage = () => {
   
   useEffect(() => {
     console.log("backButton", backButton);
-      const lanchparams = useLaunchParams
- const RawInitData =   useRawInitData
- const RawLaunchParams = useRawLaunchParams
-
- console.log("lanchparams", lanchparams);
- console.log("RawInitData", RawInitData);
- console.log("RawLaunchParams", RawLaunchParams);
-
+     
     if (backButton.isSupported()) {
       console.log();
       backButton.hide();
@@ -37,7 +30,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div style={{ padding: 20 }}>
+    <div style={{ padding: 20, backgroundColor: 'red', height: '100%'}}>
       <h1>Привет из Mini App!</h1>
       <p>Init data: {initData}</p>
 
