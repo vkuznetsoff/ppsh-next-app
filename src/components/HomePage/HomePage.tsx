@@ -1,7 +1,10 @@
 
 import {
   backButton,
-  closeMiniApp
+  closeMiniApp,
+  useLaunchParams,
+  useRawInitData,
+  useRawLaunchParams
 } from "@telegram-apps/sdk-react";
 import { Cell } from "@telegram-apps/telegram-ui";
 import Link from "next/link";
@@ -9,11 +12,22 @@ import { useEffect, useState } from "react";
 
 const HomePage = () => {
   const [initData, setInitData] = useState("");
+ 
 
+  
+  
   useEffect(() => {
     console.log("backButton", backButton);
+      const lanchparams = useLaunchParams
+ const RawInitData =   useRawInitData
+ const RawLaunchParams = useRawLaunchParams
+
+ console.log("lanchparams", lanchparams);
+ console.log("RawInitData", RawInitData);
+ console.log("RawLaunchParams", RawLaunchParams);
+
     if (backButton.isSupported()) {
-      console.log(true);
+      console.log();
       backButton.hide();
     }
 
