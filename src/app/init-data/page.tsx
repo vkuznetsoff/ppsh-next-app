@@ -33,6 +33,7 @@ export default function InitDataPage() {
     }, []);
   
   const initDataRaw = useSignal(_initDataRaw);
+  console.log('initData - ', initDataRaw)
   const initDataState = useSignal(_initDataState);
 
   const initDataRows = useMemo<DisplayDataRow[] | undefined>(() => {
