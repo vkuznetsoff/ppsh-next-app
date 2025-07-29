@@ -1,9 +1,7 @@
 
 import {
   backButton,
-  BackgroundColor,
-  PopupButton,
-  closeMiniApp,
+  closeMiniApp
 } from "@telegram-apps/sdk-react";
 import { Cell } from "@telegram-apps/telegram-ui";
 import Link from "next/link";
@@ -52,7 +50,7 @@ const HomePage = () => {
           cursor: "pointer",
         }}
         onClick={() => {
-          closeMiniApp;
+          closeMiniApp();
         }}
       >
         🚪 Выйти из приложения
