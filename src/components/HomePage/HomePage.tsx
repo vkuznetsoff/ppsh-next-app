@@ -1,27 +1,45 @@
-// pages/index.tsx
-import { backButton, BackgroundColor, PopupButton, closeMiniApp } from "@telegram-apps/sdk-react";
+
+import {
+  backButton,
+  BackgroundColor,
+  PopupButton,
+  closeMiniApp,
+} from "@telegram-apps/sdk-react";
+import { Cell } from "@telegram-apps/telegram-ui";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const HomePage = () => {
   const [initData, setInitData] = useState("");
 
   useEffect(() => {
-    
-  console.log('backButton', backButton);
-  //backButton.hide()
-//    console.log('BackgroundColor', BackgroundColor);
-//     console.log('PopupButton', PopupButton.);
+    console.log("backButton", backButton);
+    if (backButton.isSupported()) {
+      console.log(true);
+      backButton.hide();
+    }
 
+      
 
-    return () => {
-    
-    };
+    return () => {};
   }, []);
 
   return (
     <div style={{ padding: 20 }}>
       <h1>Привет из Mini App!</h1>
       <p>Init data: {initData}</p>
+
+      <Link href="/init-data">
+        <Cell subtitle="User data, chat information, technical data">
+          Init Data
+        </Cell>
+      </Link>
+
+             <Link href="/launch-params">
+             <Cell subtitle="Platform identifier, Mini Apps version, etc.">
+               Launch Parameters
+             </Cell>
+           </Link>
 
       <button
         style={{
@@ -34,7 +52,7 @@ const HomePage = () => {
           cursor: "pointer",
         }}
         onClick={() => {
-          closeMiniApp
+          closeMiniApp;
         }}
       >
         🚪 Выйти из приложения

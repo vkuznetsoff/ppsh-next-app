@@ -1,13 +1,23 @@
 'use client';
 
-import { useLaunchParams } from '@telegram-apps/sdk-react';
+import { backButton, useLaunchParams } from '@telegram-apps/sdk-react';
 import { List } from '@telegram-apps/telegram-ui';
 
 import { DisplayData } from '@/components/DisplayData/DisplayData';
 import { Page } from '@/components/Page';
+import { useEffect } from 'react';
 
 export default function LaunchParamsPage() {
   const lp = useLaunchParams();
+
+  useEffect( () => {
+        console.log("backButton", backButton);
+        if (backButton.isSupported()) {
+          console.log(true);
+        
+        }
+    
+      }, []);
 
   return (
     <Page>

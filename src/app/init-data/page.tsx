@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import {
   initDataRaw as _initDataRaw,
   initDataState as _initDataState,
+  backButton,
   type User,
   useSignal,
 } from '@telegram-apps/sdk-react';
@@ -21,6 +22,16 @@ function getUserRows(user: User): DisplayDataRow[] {
 }
 
 export default function InitDataPage() {
+
+ useEffect( () => {
+      console.log("backButton", backButton);
+      if (backButton.isSupported()) {
+        console.log(true);
+        backButton.hide();
+      }
+  
+    }, []);
+  
   const initDataRaw = useSignal(_initDataRaw);
   const initDataState = useSignal(_initDataState);
 
