@@ -8,8 +8,8 @@ import {
 import { Cell } from "@telegram-apps/telegram-ui";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { TG } from "../../../var";
-import { init } from "@/core/init";
+import { TG } from "./var";
+
 
 const HomePage = () => {
   
