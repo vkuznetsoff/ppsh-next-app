@@ -8,8 +8,10 @@ import {
 import { Cell } from "@telegram-apps/telegram-ui";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { TG } from "./data";
 
+
+
+  const TG = window.Telegram.WebApp
 
 const HomePage = () => {
   
