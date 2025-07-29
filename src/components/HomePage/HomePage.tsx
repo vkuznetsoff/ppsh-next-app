@@ -10,44 +10,20 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 
-
-  const TG = window.Telegram.WebApp
-
 const HomePage = () => {
   
     const [initData, setInitData] = useState("");
+    
   
- 
-   
-  
-  
-  useEffect(() => {
-    const initData = TG.initData
-
-
-    console.log("initData", initData);
-  
-     
-    if (backButton.isSupported()) {
-      console.log();
-      backButton.hide();
-    }
-
-     
-
-    return () => {};
-  }, []);
-
   return (
     <div style={{ padding: 20, backgroundColor: 'red', height: '100%' }}>
       <h1>Привет из Mini App!</h1>
-      <p>Init data: {initData}</p>
+
 
       <Link href="/init-data">
         <Cell subtitle="User data, chat information, technical data">
           Init Data
-          {initData}
-          user
+         
           
         </Cell>
       </Link>
