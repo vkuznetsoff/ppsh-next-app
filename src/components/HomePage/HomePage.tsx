@@ -1,32 +1,20 @@
 // pages/index.tsx
+import { backButton, BackgroundColor, PopupButton, closeMiniApp } from "@telegram-apps/sdk-react";
 import { useEffect, useState } from "react";
 
 const HomePage = () => {
   const [initData, setInitData] = useState("");
 
   useEffect(() => {
-    const tg = window.Telegram?.WebApp;
+    
+  console.log('backButton', backButton);
+  //backButton.hide()
+//    console.log('BackgroundColor', BackgroundColor);
+//     console.log('PopupButton', PopupButton.);
 
-    if (!tg) {
-      console.warn("Telegram WebApp API не найден.");
-      return;
-    }
-
-    tg.ready();
-    tg.expand();
-    tg.setBackgroundColor("#f5f5f5");
-    tg.setHeaderColor("secondary_bg_color");
-
-    setInitData(tg.initData || "нет данных");
-
-    tg.MainButton.setText("Закрыть");
-    tg.MainButton.show();
-    tg.MainButton.onClick(() => {
-      tg.close();
-    });
 
     return () => {
-      tg.MainButton.offClick();
+    
     };
   }, []);
 
@@ -46,7 +34,7 @@ const HomePage = () => {
           cursor: "pointer",
         }}
         onClick={() => {
-          window.Telegram?.WebApp?.close();
+          closeMiniApp
         }}
       >
         🚪 Выйти из приложения
