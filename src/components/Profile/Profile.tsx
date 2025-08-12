@@ -5,11 +5,14 @@ import { Button } from "@telegram-apps/telegram-ui";
 
 interface ProfileProps {
   initData: InitData | undefined;
+  register: Function 
 }
-const Profile = ({ initData }: ProfileProps) => {
-    const handleButton = () =>  {
+const Profile = ({ initData, register }: ProfileProps) => {
+    
 
-    }
+    // const handleButton = () =>  {
+    //    register()
+    // }
 
   return (
     <div className={styles.page}>
@@ -23,7 +26,7 @@ const Profile = ({ initData }: ProfileProps) => {
           alt="profile"
         />
         <div>{initData?.user?.username}</div>
-        <Button onClick={handleButton}>Зарегистрироваться</Button>
+        <Button onClick={() => register()}>Зарегистрироваться</Button>
       </div>
     </div>
   );

@@ -13,13 +13,13 @@ export function Page({ children, back = true}: PropsWithChildren<{
 }>) {
   init()
   const router = useRouter();
-  // useEffect(() => {
-  //   if (back) {
-  //     backButton.show();
-  //   } else {
-  //     backButton.hide();
-  //   }
-  // }, [back]);
+  useEffect(() => {
+    if (back) {
+      backButton.show();
+    } else {
+      backButton.hide();
+    }
+  }, [back]);
 
   useEffect(() => {
     return backButton.onClick(() => {
