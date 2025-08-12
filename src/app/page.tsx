@@ -42,7 +42,7 @@ export default function Home() {
 
   const register = async ():Promise<void> => {
     const url = baseUrl + `auth/telegram/register?initData=${(initDataRaw)}`;
-
+    
     try {
       const response = await fetch(url, {
       method: "POST",
@@ -70,6 +70,7 @@ export default function Home() {
     <Page back={true}>
       <div style={style}>КЛУБ ПЕРЕПРОШИТЫХ 2.0!</div>
       <Profile initData={initDataState} register={register} />
+      <div>{initDataRaw}</div>
       {isRegister && <div>Успех!</div>}
       <Link href="/init-data">
         <Cell subtitle="User data, chat information, technical data">
