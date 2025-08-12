@@ -27,7 +27,7 @@ function RootInner({ children }: PropsWithChildren) {
   useEffect(() => {
     initDataUser && setLocale(initDataUser.language_code);
   }, [initDataUser]);
-
+debugger
   return (
     <TonConnectUIProvider manifestUrl="/tonconnect-manifest.json">
       <AppRoot
@@ -35,6 +35,7 @@ function RootInner({ children }: PropsWithChildren) {
         platform={
           ['macos', 'ios'].includes(lp.tgWebAppPlatform) ? 'ios' : 'base'
         }
+      
       >
         {children}
       </AppRoot>

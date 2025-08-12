@@ -23,19 +23,12 @@ function getUserRows(user: User): DisplayDataRow[] {
 
 export default function InitDataPage() {
 
- useEffect( () => {
-      console.log("backButton", backButton);
-      if (backButton.isSupported()) {
-        console.log(true);
-        backButton.hide();
-      }
-  
-    }, []);
+ 
   
   const initDataRaw = useSignal(_initDataRaw);
   console.log('initData - ', initDataRaw)
   const initDataState = useSignal(_initDataState);
-
+  debugger
   const initDataRows = useMemo<DisplayDataRow[] | undefined>(() => {
     if (!initDataState || !initDataRaw) {
       return;

@@ -1,0 +1,15 @@
+.page {
+    text-align: center;
+    
+  .header {
+    color: black;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    row-gap: 10px;
+
+    .photo {
+        border-radius: 50%;
+    } 
+  }
+}

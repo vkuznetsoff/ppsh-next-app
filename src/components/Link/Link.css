@@ -1,4 +1,7 @@
 .link {
   text-decoration: none;
   color: var(--tg-theme-link-color);
+  background-color: black;
+  color: rgb(78, 113, 161);
+  border: 1px solid black;
 }

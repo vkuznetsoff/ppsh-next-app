@@ -1,59 +1,36 @@
-'use client';
+"use client";
 
-import { Section, Cell, Image, List } from '@telegram-apps/telegram-ui';
-import { useTranslations } from 'next-intl';
-
-import { Link } from '@/components/Link/Link';
-import { LocaleSwitcher } from '@/components/LocaleSwitcher/LocaleSwitcher';
-import { Page } from '@/components/Page';
-import {} from "@telegram-apps/sdk-react"
-import HomePage from '@/components/HomePage/HomePage';
-
+import { useTranslations } from "next-intl";
+import { Page } from "@/components/Page";
+import Profile from "@/components/Profile/Profile";
+import Link from "next/link";
+import { Cell } from "@telegram-apps/telegram-ui";
+import { initDataRaw as _initDataRaw,  initDataState as _initDataState, useSignal } from "@telegram-apps/sdk-react";
 
 export default function Home() {
-  const t = useTranslations('i18n');
-  
-  const style= {
-    border: "1px solid white",
-    height: "50%"
-  }
+  const t = useTranslations("i18n");
+  const style = {
+    backgroundColor: "red",
+   
+  };
 
+  // const initDataRaw = useSignal(_initDataRaw);
+  //   console.log('initData - ', initDataRaw)
+    const initDataState = useSignal(_initDataState);
+    console.log('initDataState!!! - ', initDataState)
+    
 
   return (
-  
-    <div style={style}>
-<Page back={false} >
-     <HomePage />
-      КЛУБ ПЕРЕПРОШИТЫХ 2.0
-
-      
-      {/* <List>
-        <Section
-          header="Application Launch Data"
-          footer="These pages help developer to learn more about current launch information"
-        >
-          <Link href="/init-data">
-            <Cell subtitle="User data, chat information, technical data">
-              Init Data
-            </Cell>
-          </Link>
-          <Link href="/launch-params">
-            <Cell subtitle="Platform identifier, Mini Apps version, etc.">
-              Launch Parameters
-            </Cell>
-          </Link>
-          <Link href="/theme-params">
-            <Cell subtitle="Telegram application palette information">
-              Theme Parameters
-            </Cell>
-          </Link>
-        </Section>
-        <Section header={t('header')} footer={t('footer')}>
-          <LocaleSwitcher />
-        </Section>
-      </List> */}
+    <Page back={true}>
+      <div style={style}>КЛУБ ПЕРЕПРОШИТЫХ 2.0!</div>
+      <Profile initData={initDataState}/>
+      <Link href="/init-data">
+        <Cell subtitle="User data, chat information, technical data">
+          Init Data
+         
+          
+        </Cell>
+      </Link>
     </Page>
-    </div>
-    
   );
 }

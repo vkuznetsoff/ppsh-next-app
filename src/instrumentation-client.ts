@@ -8,6 +8,7 @@ import { mockEnv } from './mockEnv';
 mockEnv().then(() => {
   try {
     const launchParams = retrieveLaunchParams();
+    debugger
     const { tgWebAppPlatform: platform } = launchParams;
     const debug =
       (launchParams.tgWebAppStartParam || '').includes('debug') ||
