@@ -28,7 +28,7 @@ interface RegisterResponse {
 }
 
 export default function Home() {
-  const [err, setErr] = useState<String | unknown>("")
+  const [err, setErr] = useState<String>("")
   const [isRegister, setIsRegister] = useState<boolean>(false)
 
   const t = useTranslations("i18n");
@@ -58,9 +58,9 @@ export default function Home() {
      const data: RegisterResponse = await response.json();
      setIsRegister(true)
 
-    } catch (error: unknown)  {
+    } catch (error)  {
      
-      setErr(error); // Если ошибка неизвестна, установим дефолтное сообщение
+      setErr(error as string); // Если ошибка неизвестна, установим дефолтное сообщение
     }
     
   }
@@ -72,6 +72,7 @@ export default function Home() {
       <Profile initData={initDataState} register={register} />
       <div>{initDataRaw}</div>
       {isRegister && <div>Успех!</div>}
+      {err && <div>{err}</div>}
       <Link href="/init-data">
         <Cell subtitle="User data, chat information, technical data">
           Init Data
