@@ -7,7 +7,7 @@ import { IUser } from "@/app/page";
 interface ProfileProps {
   initData: InitData | undefined;
   register: Function;
-  user: IUser;
+  user: IUser | null;
 }
 const Profile = ({ initData, register, user }: ProfileProps) => {
   // const handleButton = () =>  {
