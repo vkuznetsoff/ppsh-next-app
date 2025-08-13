@@ -41,14 +41,17 @@ export default function Home() {
   const initDataState = useSignal(_initDataState);
 
   const register = async ():Promise<void> => {
-    const url = baseUrl + `auth/telegram/register?initData=${(initDataRaw)}`;
+    const url = baseUrl + `auth/telegram/register`;
     
     try {
       const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
-      }
+      },
+      body: JSON.stringify({
+        initData: initDataRaw
+      })
     })
     
      if (!response.ok) {
