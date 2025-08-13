@@ -85,6 +85,7 @@ export default function Home() {
     body: JSON.stringify({ initData: initDataRaw }),
   })
     .then((response) => {
+      debugger
       if (!response.ok) {
         console.log("response.ok = ", response.ok)
       }
@@ -92,11 +93,13 @@ export default function Home() {
       return response.json() as Promise<RegisterResponse>;
     })
     .then((data) => {
+      debugger
       setIsRegister(true);
       console.log("Token:", data.token);
       console.log("User:", data.user);
     })
     .catch((error: any) => {
+      debugger
      console.log('ERR - ', error)
     });
 };
