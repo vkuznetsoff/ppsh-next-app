@@ -17,8 +17,8 @@ const Profile = ({ initData, register, user }: ProfileProps) => {
   if (true) {
     return (
       <div className={styles.page}>
-        <Info user={user} avatar={user?.photo_url}/>
-        <div className={styles.header}>
+        <Info user={user} avatar={user?.photo_url} initData={initData}/>
+        {/* <div className={styles.header}>
           <h2>ПРОФИЛЬ</h2>
           <Image
             className={styles.photo}
@@ -29,7 +29,7 @@ const Profile = ({ initData, register, user }: ProfileProps) => {
           />
           <div>{initData?.user?.username}</div>
           <Button onClick={() => register()}>Зарегистрироваться</Button>
-        </div>
+        </div> */}
       </div>
     );
   } else {

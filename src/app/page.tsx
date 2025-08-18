@@ -63,7 +63,6 @@ export default function Home() {
       body: JSON.stringify({ initData: initDataRaw }),
     })
       .then((response) => {
-        debugger;
         if (!response.ok) {
           console.log("response.ok = ", response.ok);
         }

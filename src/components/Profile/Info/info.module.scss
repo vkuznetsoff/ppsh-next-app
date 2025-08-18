@@ -1,6 +1,8 @@
 .section {
     display: flex;
     flex-direction: column;
+    row-gap: 8;
+    gap: 20;
    
    .avatar {
     margin: 0 auto;
