@@ -23,6 +23,7 @@ export interface IUser {
   updated_at: string;
   created_at: string;
   id: number;
+  photo_url: string
 }
 
 interface IRegisterResponse {

@@ -1,0 +1,18 @@
+.section {
+    display: flex;
+    flex-direction: column;
+   
+   .avatar {
+    margin: 0 auto;
+   }
+
+   .infoControls { 
+    // display: inline-flex;
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-around;
+    width: 100%;
+   }
+   
+}
