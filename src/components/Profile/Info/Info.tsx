@@ -2,6 +2,8 @@ import {
   Avatar,
   Blockquote,
   Button,
+  Modal,
+  Placeholder,
   Section,
   Text,
 } from "@telegram-apps/telegram-ui";
@@ -9,6 +11,8 @@ import styles from "./info.module.scss";
 import { IUser } from "@/app/page";
 import { InitData } from "@telegram-apps/sdk-react";
 import { init } from "@/core/init";
+import { ModalHeader } from "@telegram-apps/telegram-ui/dist/components/Overlays/Modal/components/ModalHeader/ModalHeader";
+import ProfileModal from "../ProfileForm/ProfileModal";
 
 interface IInfoProps {
   user: IUser | null;
@@ -31,9 +35,10 @@ const Info = ({ initData }: IInfoProps) => {
       </Button>
       <Blockquote>Some text</Blockquote>
       <div className={styles.infoControls}>
-        <Button mode="gray" size="l">
+        {/* <Button mode="gray" size="l">
           Редактировать
-        </Button>
+        </Button> */}
+        <ProfileModal />
         <Button disabled mode="gray" size="l">
           Поделиться
         </Button>
@@ -41,5 +46,15 @@ const Info = ({ initData }: IInfoProps) => {
     </Section>
   );
 };
+
+const EditButton = () => {
+  return (
+    <Button mode="gray" size="l">
+      Редактировать
+    </Button>
+  );
+};
+
+
 
 export default Info;

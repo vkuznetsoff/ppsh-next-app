@@ -4,6 +4,7 @@ import { InitData } from "@telegram-apps/sdk-react";
 import { Button } from "@telegram-apps/telegram-ui";
 import { IUser } from "@/app/page";
 import Info from "./Info/Info";
+import ProfileModal from "./ProfileForm/ProfileModal";
 
 interface ProfileProps {
   initData: InitData | undefined;
@@ -18,6 +19,7 @@ const Profile = ({ initData, register, user }: ProfileProps) => {
     return (
       <div className={styles.page}>
         <Info user={user} avatar={user?.photo_url} initData={initData}/>
+        <ProfileModal />
         {/* <div className={styles.header}>
           <h2>ПРОФИЛЬ</h2>
           <Image
