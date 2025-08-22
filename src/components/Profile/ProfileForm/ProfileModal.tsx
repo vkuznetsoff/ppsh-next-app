@@ -1,5 +1,6 @@
 import { Button, Modal, Placeholder } from "@telegram-apps/telegram-ui";
 import { ModalHeader } from "@telegram-apps/telegram-ui/dist/components/Overlays/Modal/components/ModalHeader/ModalHeader";
+import ProfileEdit from "./ProfileEdit";
 
 const ProfileModal = () => {
   return (
@@ -9,7 +10,8 @@ const ProfileModal = () => {
       Редактировать
     </Button>}
     >
-      <Placeholder description="Description" header="Title" />
+
+      <ProfileEdit />
     </Modal>
   );
 };
