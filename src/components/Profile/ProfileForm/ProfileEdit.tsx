@@ -30,7 +30,7 @@ const ProfileEdit = () => {
 
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} >
+    <form className={styles.editForm} onSubmit={handleSubmit(onSubmit)} >
         {/* <Controller
         name="photo"
         control={control}
@@ -59,6 +59,7 @@ const ProfileEdit = () => {
         name="relations"
         control={control}
         render={({ field }) => <Select {...field}  defaultValue="">
+            <option></option>
             <option>В отношениях</option>
             <option>В супружестве</option>
             <option>В поиске</option>
@@ -75,14 +76,14 @@ const ProfileEdit = () => {
         control={control}
         render={({ field }) => <Textarea {...field} placeholder="Статус"/>}
       />
-      {/* <Button type="submit" width={"100%"} >OKkkkkkk</Button> */}
+      <Button className={styles.btnSubmit} mode="filled" type="submit" size="l">Подтвердить</Button>
 
-      <Controller
+      {/* <Controller
         name="status"
         control={control}
         render={({ field }) => <Button {...field} mode="filled" type="submit" size="l" 
         >Подтвердить</Button>}
-      />
+      /> */}
       {/* <input type="submit" /> */}
     </form>
   )

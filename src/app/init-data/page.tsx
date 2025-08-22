@@ -28,7 +28,7 @@ export default function InitDataPage() {
   const initDataRaw = useSignal(_initDataRaw);
   console.log('initData - ', initDataRaw)
   const initDataState = useSignal(_initDataState);
-  debugger
+
   const initDataRows = useMemo<DisplayDataRow[] | undefined>(() => {
     if (!initDataState || !initDataRaw) {
       return;

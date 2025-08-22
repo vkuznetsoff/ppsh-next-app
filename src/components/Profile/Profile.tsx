@@ -19,7 +19,7 @@ const Profile = ({ initData, register, user }: ProfileProps) => {
     return (
       <div className={styles.page}>
         <Info user={user} avatar={user?.photo_url} initData={initData}/>
-        <ProfileModal />
+       
         {/* <div className={styles.header}>
           <h2>ПРОФИЛЬ</h2>
           <Image
