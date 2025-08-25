@@ -18,8 +18,6 @@ RUN npm install --production --frozen-lockfile
 
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/package.json ./
 
 EXPOSE 3000
 CMD ["npm", "start"]
