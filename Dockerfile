@@ -6,10 +6,20 @@ COPY package*.json ./
 RUN npm install --frozen-lockfile
 COPY . .
 RUN npm run build
-RUN npm run export
 
-# Stage 2: Prepare static files
-FROM alpine:3.18 AS runner
-WORKDIR /var/www/html/frontend
+# Stage 2: Production
+FROM node:20-alpine AS runner
+WORKDIR /app
 
-COPY --from=builder /app/out ./
+ENV NODE_ENV=production
+
+COPY package*.json ./
+RUN npm install --production --frozen-lockfile
+
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/package.json ./
+
+EXPOSE 3000
+CMD ["npm", "start"]
